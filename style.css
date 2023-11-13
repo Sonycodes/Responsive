@@ -4,14 +4,28 @@
     box-sizing: border-box;
 
 }
-body{
+/* body{
     display: flex;
-}
+} */
+
 header{
    display: flex;
    justify-content: space-between;
    width: 100vw;
 }
+
+.navbar-desktop{
+display: flex;
+}
+
+nav{
+display: flex;
+justify-content: space-between;
+
+}
+ul{
+  list-style: none;
+    }
 
 
 label{
@@ -26,7 +40,7 @@ label input{
     appearance: none;
 }
 
-label div{
+label .menu{
     position: relative;
     display: block;
     width: 100%;
@@ -35,7 +49,7 @@ label div{
     border-radius: 70px;
 }
 
-label div::before{
+label .menu::before{
     content: "\f0c9";
     font-family: "Font Awesome 6 Free";
     position: absolute;
@@ -53,13 +67,24 @@ label div::before{
 
 }
 
-
-
 /* : va permettre de changer une fois cliqué */
-label input:checked ~ div::before{
+label input:checked ~ .menu::before{
     content: "\58";
     font-family: "Font Awesome 6 Free";
     color: rgb(221, 0, 255);
     font-size: 1em;
     font-weight: 600;
+}
+
+.deroulant{
+    width: 100%;
+    height: 0;
+    transition: 1s;
+overflow: hidden;
+background: red;
+}
+
+label input:checked ~ .deroulant{
+ height: 100px;
+ /* display:block; */
 }
